@@ -13,9 +13,9 @@ export class AppComponent {
   isLogin: Observable<boolean> | undefined;
   key: any;
 
-  constructor(private authService: AuthService) {}
+  constructor(private auth: AuthService) {}
 
   ngOnInit() {
-    this.isLogin = this.authService.isLoggedIn;
+    this.isLogin = this.auth.isLoggedIn;
   }
 }
