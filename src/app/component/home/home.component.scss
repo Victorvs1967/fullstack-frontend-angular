@@ -1,0 +1,42 @@
+.overlay {
+  min-height: 100%;
+  min-width: 100%;
+  position: absolute;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.description {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  text-align: center;
+}
+
+.description h1 {
+  color: #6ab446;
+}
+
+.description p {
+  color: #ffffff;
+  font-size: 1.3rem;
+  line-height: 150%;
+}
+
+.description button {
+  border: 1px solid #6ab446;
+  background: #6ab446;
+  color: #ffffff;
+  font-size: 1rem;
+}
+
+.description button:not(:last-child) {
+  margin-right: 1.5rem;
+}
+
+.description button:hover {
+  border: 1px solid #fff;
+  background: #fff;
+  color: #000;
+}

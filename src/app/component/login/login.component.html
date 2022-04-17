@@ -1,0 +1,33 @@
+<form [formGroup]="form" class="container col-sm-6 description">
+  <fieldset class="row">
+    <h5>{{ message }}</h5>
+    <div class="form-group row">
+      <h2 class="col-sm-10">Sign In</h2>
+      <button mat-button color="primary" class="col-sm-2" routerLink="/home"><mat-icon>arrow_back_ios_new</mat-icon><span>Back</span></button>
+      <!-- <button class="btn btn-outline-info col-md-2" routerLink="/home" type="button" name="back"><i class="bi bi-chevron-left"></i> Back</button> -->
+    </div>
+    <hr>
+    <div class="form-group">
+      <label for="name">Username: </label>
+      <input type="text" class="form-control phone" maxlength="28" placeholder="Enter your email" formControlName="username" [ngClass]="{ 'is-invalid': submitted && f['username'].errors }" />
+      <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+        <div *ngIf="f['username'].errors['required']">Username is required</div>
+        <div *ngIf="f['username'].errors['email']">Enter valid email</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password: </label>
+      <input type="password" class="form-control phone" maxlength="30" placeholder="Enter your password..." formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+        <div *ngIf="f['password'].errors['required']">Password is required</div>
+        <div *ngIf="f['password'].errors['minlength']">Password must be at least 3 characters</div>
+        <div *ngIf="f['password'].errors['maxlength']">Password must not exceed 30 characters</div>
+      </div>
+    </div>
+    <div class="form-group title">
+      <input type="submit" class="btn btn-outline-success" name="login" value="login" (click)="login()">
+      <span>&nbsp;&nbsp;</span>
+      <input type="reset" class="btn btn-outline-primary" name="reset" (click)="onReset()">
+    </div>
+  </fieldset>
+</form>

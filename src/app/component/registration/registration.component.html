@@ -1,0 +1,79 @@
+<form [formGroup]="form" class="container col-sm-6 description">
+  <fieldset class="row">
+    <h5>{{ message }}</h5>
+    <div class="form-group row">
+      <h2 class="col-sm-10">Register Now</h2>
+      <button mat-button color="primary" class="col-sm-2" routerLink="/home"><mat-icon>arrow_back_ios_new</mat-icon><span>Back</span></button>
+    </div>
+    <hr>
+    <div class="form-group col-sm-6">
+      <label for="firstname">First Name: </label>
+      <input type="text" class="form-control phone" maxlength="28" placeholder="Enter your firstname..." formControlName="firstname" [ngClass]="{ 'is-invalid': submitted && f['firstname'].errors }">
+      <div *ngIf="submitted && f['firstname'].errors" class="invalid-feedback">
+        <div *ngIf="f['firstname'].errors['required']">First name is required</div>
+        <div *ngIf="f['firstname'].errors['minlength']">First name must be at least 3 characters</div>
+        <div *ngIf="f['firstname'].errors['maxlength']">First name must not exceed 30 characters</div>
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <label for="lastname">Last Name: </label>
+      <input type="text" class="form-control phone" maxlength="28" placeholder="Enter your lastname..." formControlName="lastname" [ngClass]="{ 'is-invalid': submitted && f['lastname'].errors }">
+      <div *ngIf="submitted && f['lastname'].errors" class="invalid-feedback">
+        <div *ngIf="f['lastname'].errors['required']">Last name is required</div>
+        <div *ngIf="f['lastname'].errors['minlength']">Last name must be at least 3 characters</div>
+        <div *ngIf="f['lastname'].errors['maxlength']">Last name must not exceed 30 characters</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email: </label>
+      <input type="email" class="form-control phone" maxlength="28" placeholder="Enter your email..." formControlName="email" [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+      <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+        <div *ngIf="f['email'].errors['required']">Email is required</div>
+        <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="password">Password: </label>
+      <input type="password" class="form-control phone" maxlength="28" placeholder="Enter your password..." formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }">
+      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+        <div *ngIf="f['password'].errors['required']">Password is required</div>
+        <div *ngIf="f['password'].errors['minlength']">Password must be at least 3 characters</div>
+        <div *ngIf="f['password'].errors['maxlength']">Password must not exceed 30 characters</div>
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <label for="dob">Date of Birth: </label>
+      <input type="date" class="form-control phone" maxlength="28" placeholder="Enter date of birth..." formControlName="dob" [ngClass]="{ 'is-invalid': submitted && f['dob'].errors }">
+      <div *ngIf="submitted && f['dob'].errors" class="invalid-feedback">
+        <div *ngIf="f['dob'].errors['required']">Date of Birth is required</div>
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <label for="phone">Phone: </label>
+      <input type="text" class="form-control phone" maxlength="28" placeholder="Enter your phone number..." formControlName="phone" [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }">
+      <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+        <div *ngIf="f['phone'].errors['required']">Phone Number is required</div>
+        <div *ngIf="f['phone'].errors['minlength']">Phone Number must be at least 10 characters</div>
+        <div *ngIf="f['phone'].errors['maxlength']">Phone Number must not exceed 12 characters</div>
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <label for="domain">Domain: </label>
+      <input type="text" class="form-control phone" maxlength="28" placeholder="Enter your domain..." formControlName="domain" [ngClass]="{ 'is-invalid': submitted && f['domain'].errors }">
+      <div *ngIf="submitted && f['domain'].errors" class="invalid-feedback">
+        <div *ngIf="f['domain'].errors['required']">Domain is required</div>
+      </div>
+    </div>
+    <div class="form-group col-sm-6">
+      <label for="experience">Experience: </label>
+      <input type="text" class="form-control phone" maxlength="28" placeholder="Enter your experience..." formControlName="experience" [ngClass]="{ 'is-invalid': submitted && f['experience'].errors }">
+      <div *ngIf="submitted && f['experience'].errors" class="invalid-feedback">
+        <div *ngIf="f['experience'].errors['required']">Experience is required</div>
+      </div>
+    </div>
+    <div class="form-group text-center">
+      <input type="submit" class="btn btn-outline-success" name="submit_reg" value="Register" (click)="registerNow()"><span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+      <input type="reset" class="btn btn-outline-primary" name="reset" (click)="onReset()">
+    </div>
+  </fieldset>
+</form>
